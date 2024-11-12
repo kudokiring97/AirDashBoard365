@@ -155,10 +155,7 @@ def render_device2_dashboard():
         max_date = df['DATE'].max().date()
         today = datetime.today().date()
 
-        if "selected_dates" not in st.session_state:
-            st.session_state.selected_dates = (today - timedelta(days=1), today)
-        elif "selected_dates" in st.session_state:
-            st.session_state.selected_dates = (max_date - timedelta(days=1), max_date)
+        st.session_state.selected_dates = (max_date - timedelta(days=1), max_date)
 
         selected_range = st.date_input(
             "📅집계 기간 선택",

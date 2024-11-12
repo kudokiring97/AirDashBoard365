@@ -153,10 +153,9 @@ def render_device1_dashboard():
         min_date = df['DATE'].min().date()
         max_date = df['DATE'].max().date()
         today = datetime.today().date()
-        
-        # 세션 상태 초기화 (처음 접근할 때만 설정)
-        if "selected_dates" not in st.session_state:
-            st.session_state.selected_dates = (today - timedelta(days=1), today)
+
+        #무슨 경우에도 하루 전
+        st.session_state.selected_dates = (today - timedelta(days=1), today)
         
         # 날짜 선택 위젯
         selected_range = st.date_input(
@@ -165,10 +164,6 @@ def render_device1_dashboard():
             min_value=min_date,
             max_value=max_date
         )
-        
-        # 세션 상태 업데이트 (사용자가 변경한 경우만 반영)
-        if selected_range != st.session_state.selected_dates:
-            st.session_state.selected_dates = selected_range
 
         filtered_df = df[(df['DATE'] >= pd.to_datetime(selected_range[0])) &
                          (df['DATE'] <= pd.to_datetime(selected_range[1]))]    

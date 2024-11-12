@@ -3,3 +3,4 @@ folium
 streamlit-folium
 plotly
 snowflake
+snowflake-connector-python

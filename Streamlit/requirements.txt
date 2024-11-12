@@ -1,10 +1,7 @@
-pyarrow==10.0.1
-cmake
-numpy==1.23.5
-pandas
+streamlit>=1.28
+snowflake-snowpark-python>=0.9.0
+snowflake-connector-python>=2.8.0
 streamlit
 folium
 streamlit-folium
 plotly
-snowflake
-snowflake-connector-python==3.0.3

@@ -1,3 +1,6 @@
+streamlit
+folium
+streamlit-folium
+pandas
+plotly
 snowflake-connector-python
-snowflake-snowpark-python
-streamlit==1.31.1

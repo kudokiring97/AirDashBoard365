@@ -3,4 +3,4 @@ folium
 streamlit-folium
 plotly
 snowflake
-snowflake-connector-python
+snowflake-connector-python==3.0.3

@@ -1,3 +1,7 @@
+pyarrow==10.0.1
+cmake
+numpy==1.23.5
+pandas
 streamlit
 folium
 streamlit-folium

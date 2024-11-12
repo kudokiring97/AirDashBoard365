@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 import snowflake.connector
 
 def load_air_quality_data(serial_no=None):

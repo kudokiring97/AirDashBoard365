@@ -1,8 +1,8 @@
 pip==24.3.1
 setuptools>=75.4.0
 wheel
+cmake
 streamlit==1.40.1
 snowflake-connector-python==3.0.2
 snowflake-snowpark-python==1.1.0
 pyarrow<10.1.0
-cmake

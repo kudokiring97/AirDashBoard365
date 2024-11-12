@@ -2,13 +2,21 @@ import pandas as pd
 import snowflake.connector
 
 def load_air_quality_data(serial_no=None):
+
+    user = st.secrets["snowflake"]["user"]
+    password = st.secrets["snowflake"]["password"]
+    account = st.secrets["snowflake"]["account"]
+    warehouse = st.secrets["snowflake"]["warehouse"]
+    database = st.secrets["snowflake"]["database"]
+    schema = st.secrets["snowflake"]["schema"]
+   
     conn = snowflake.connector.connect(
-        user='ppq1918',
-        password='kdms1565**ZX',
-        account='pzzyzcz-sn42771',
-        warehouse='COMPUTE_WH',
-        database='air365',
-        schema='test'
+        user=user,
+        password=password,
+        account=account,
+        warehouse=warehouse,
+        database=database,
+        schema=schema
     )
 
     query = "SELECT * FROM measurements "

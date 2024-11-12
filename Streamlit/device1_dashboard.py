@@ -155,7 +155,7 @@ def render_device1_dashboard():
         today = datetime.today().date()
 
         #무슨 경우에도 하루 전
-        st.session_state.selected_dates = (today - timedelta(days=1), today)
+        st.session_state.selected_dates = (max_date - timedelta(days=1), max_date)
         
         # 날짜 선택 위젯
         selected_range = st.date_input(

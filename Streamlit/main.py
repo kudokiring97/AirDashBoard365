@@ -47,13 +47,13 @@ def render_main_page():
         },
         {
             "location": [37.330482, 127.256688],
-            "tooltip": "ACE HALL",
+            "tooltip": "기숙사방",
             "icon_url": "https://cdn-icons-png.flaticon.com/512/684/684908.png",
             "page": "device2_dashboard"
         },
         {
             "location": [37.329216, 127.255288],
-            "tooltip": "야외 학습장",
+            "tooltip": "LECTURE실",
             "icon_url": "https://cdn-icons-png.flaticon.com/512/684/684908.png",
             "page": "device3_dashboard"
         }

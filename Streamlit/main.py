@@ -27,7 +27,7 @@ def go_to_page(page_name):
 
 # 메인 페이지 렌더링 함수 정의
 def render_main_page():
-    st.title("용인외국어고등학교 공기질 측정 대시보드")
+    st.title("HAFS 공기질 측정 대시보드")
 
 
     # 지도의 중심 위치와 확대 레벨 설정 (zoom_start=18)

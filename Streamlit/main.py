@@ -27,7 +27,7 @@ def go_to_page(page_name):
 
 # 메인 페이지 렌더링 함수 정의
 def render_main_page():
-    st.title("HAFS 공기질 측정 대시보드")
+    st.title("공기질 데이터 기반의 건강 위험 예측 및 경고 시스템")
 
 
     # 지도의 중심 위치와 확대 레벨 설정 (zoom_start=18)

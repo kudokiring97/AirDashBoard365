@@ -86,7 +86,7 @@ def render_detailed_view02():
     col1, col2 = st.columns([8, 1])
     with col2:
         if st.button("🔙 돌아가기"):
-            st.session_state.page = "device1_dashboard"
+            st.session_state.page = "device2_dashboard"
             st.rerun()
 
 

@@ -1,2 +1,2 @@
 # AirDashBoard365
-학교과제용
+Air365

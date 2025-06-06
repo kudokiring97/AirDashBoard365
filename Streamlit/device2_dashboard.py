@@ -148,6 +148,7 @@ def render_device2_dashboard():
         
 
     # 우측 화면 (그래프 시각화)
+    # 우측 화면 (그래프 시각화)
     with right_col:
         
         # 날짜 선택 위젯
@@ -164,10 +165,13 @@ def render_device2_dashboard():
             max_value=max_date
         )
 
+        # ✅ 수정된 필터링 (end date + 1 day)
+        start_datetime = pd.to_datetime(selected_range[0])
+        end_datetime = pd.to_datetime(selected_range[1]) + pd.Timedelta(days=1)
 
-        filtered_df = df[(df['DATE'] >= pd.to_datetime(selected_range[0])) &
-                         (df['DATE'] <= pd.to_datetime(selected_range[1]))]    
+        filtered_df = df[(df['DATE'] >= start_datetime) & (df['DATE'] < end_datetime)]    
 
+        # 그래프 그리기
         fig_pm10 = px.line(filtered_df, x='DATE', y='PM10', title='미세먼지 농도 변화', markers=True)
         fig_co2 = px.line(filtered_df, x='DATE', y='CO2', title='CO2 농도 변화', markers=True)
         

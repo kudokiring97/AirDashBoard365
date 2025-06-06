@@ -103,7 +103,7 @@ def render_device1_dashboard():
         # 제목 및 홈 버튼
         col1, col2 = st.columns([8, 2])
         with col1:
-            st.markdown("<h1 style='text-align: left;'>LUX HALL</h1>", unsafe_allow_html=True)
+            st.markdown("<h1 style='text-align: left;'>강당</h1>", unsafe_allow_html=True)
         with col2:
             if st.button("🏠 홈으로"):
                 st.session_state.page = "main"

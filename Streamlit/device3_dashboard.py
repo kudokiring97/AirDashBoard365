@@ -149,20 +149,13 @@ def render_device3_dashboard():
 
     # 우측 화면 (그래프 시각화)
     with right_col:
+        
         # 날짜 선택 위젯
         min_date = df['DATE'].min().date()
         max_date = df['DATE'].max().date()
         today = datetime.today().date()
 
-                # 세션 상태에서 selected_dates가 유효한 범위 내에 있는지 확인
-        
-        if "selected_dates" in st.session_state:
-            # 기존 값이 min_date와 max_date 범위를 벗어나면 초기화
-            start_date, end_date = st.session_state.selected_dates
-            if not (min_date <= start_date <= max_date and min_date <= end_date <= max_date):
-                st.session_state.selected_dates = (max_date - timedelta(days=1), max_date)
-        else:
-            st.session_state.selected_dates = (max_date - timedelta(days=1), max_date)
+        st.session_state.selected_dates = (max_date - timedelta(days=1), max_date)
 
         selected_range = st.date_input(
             "📅집계 기간 선택",
@@ -171,10 +164,13 @@ def render_device3_dashboard():
             max_value=max_date
         )
 
+        # ✅ 수정된 필터링 (end date + 1 day)
+        start_datetime = pd.to_datetime(selected_range[0])
+        end_datetime = pd.to_datetime(selected_range[1]) + pd.Timedelta(days=1)
 
-        filtered_df = df[(df['DATE'] >= pd.to_datetime(selected_range[0])) &
-                         (df['DATE'] <= pd.to_datetime(selected_range[1]))]    
+        filtered_df = df[(df['DATE'] >= start_datetime) & (df['DATE'] < end_datetime)]    
 
+        # 그래프 그리기
         fig_pm10 = px.line(filtered_df, x='DATE', y='PM10', title='미세먼지 농도 변화', markers=True)
         fig_co2 = px.line(filtered_df, x='DATE', y='CO2', title='CO2 농도 변화', markers=True)
         

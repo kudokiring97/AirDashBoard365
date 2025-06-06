@@ -41,7 +41,7 @@ def render_main_page():
     pins = [
         {
             "location": [37.330040, 127.255418],
-            "tooltip": "LUX HALL",
+            "tooltip": "강당",
             "icon_url": "https://cdn-icons-png.flaticon.com/512/684/684908.png",
             "page": "device1_dashboard"
         },
@@ -53,7 +53,7 @@ def render_main_page():
         },
         {
             "location": [37.329216, 127.255288],
-            "tooltip": "LECTURE실",
+            "tooltip": "교실",
             "icon_url": "https://cdn-icons-png.flaticon.com/512/684/684908.png",
             "page": "device3_dashboard"
         }
